@@ -40,3 +40,26 @@ aws eks update-kubeconfig --region eu-central-1 --name myapp-eks-cluster
 # test configuration
 kubectl get svc
 ```
+
+#### helm consul
+```sh
+# helm with eks
+helm install eks hashicorp/consul --version 1.0.0 --values consul-values.yaml --set global.datacenter=eks
+
+# helm with lke
+helm install lke hashicorp/consul --version 1.0.0 --values consul-values.yaml --set global.datacenter=lke
+
+```
+
+### Commands to check the kubectl service, pods, all
+``` sh
+# test configuration
+kubectl get svc
+# test pod
+kubectl get pod
+# test node
+kubectl get node
+# get all
+kubectl get all
+```
+
